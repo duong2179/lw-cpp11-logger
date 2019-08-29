@@ -3,7 +3,7 @@
 int main() {
   Log::LoggingLevel() = Log::LevelFromString("DEBUG");
   Log::OnOffFile() = true;
-  Log::LogPath() = "/tmp/hdsr2.log";
+  Log::LogPath() = "/tmp/lwtest.log";
   Log::OnOffStdout() = true;
 
   LOGGER(logDEBUG) << "Hello, world";
