@@ -3,7 +3,7 @@ Light Weight C11 Logger
 
 ### How to build
 ```
-g++ -o lwtest test.cpp Logger.cpp -std=c++11 -lpthread
+g++ -o lwtest lwtest.cpp Logger.cpp -std=c++11 -lpthread
 ```
 
 ### Run & see output
