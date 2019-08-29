@@ -1,5 +1,5 @@
-# lw-c11-logger
-Light Weight C11 Logger
+# lw-cpp11-logger
+Light Weight C++11 Logger
 
 ### How to build
 ```
