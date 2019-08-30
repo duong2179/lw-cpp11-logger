@@ -1,5 +1,6 @@
 #include "Logger.h"
 #include <cstring>
+#include <ctime>
 
 std::mutex Log::mtx;
 
@@ -15,7 +16,8 @@ std::string Log::TimeStringFromEpoch(int64_t ts64) {
   time_t secs = ts64 / MSECS_PER_SEC;
   int32_t msecs = ts64 % MSECS_PER_SEC;
 
-  struct tm timeinfo = *localtime(&secs);
+  // TODO: localtime is NOT thread-safe
+  struct tm timeinfo = *std::localtime(&secs);
 
   char str[32];
   memset(str, 0, 32);
@@ -61,9 +63,9 @@ Log::~Log() {
   }
 }
 
-TLogLevel& Log::LoggingLevel() {
-  static TLogLevel reporting_level = logDEBUG;
-  return reporting_level;
+TLogLevel& Log::LogLevel() {
+  static TLogLevel log_level = logDEBUG;
+  return log_level;
 }
 
 bool& Log::OnOffStdout() {

@@ -22,7 +22,7 @@ class Log {
                           TLogLevel level = logINFO);
 
  public:
-  static TLogLevel& LoggingLevel();
+  static TLogLevel& LogLevel();
   static bool& OnOffStdout();
   static bool& OnOffFile();
   static std::string& LogPath();
@@ -41,16 +41,16 @@ class Log {
   static std::mutex mtx;
 };
 
-#ifndef FILELOG_MAX_LEVEL
-#define FILELOG_MAX_LEVEL logDEBUG
+#ifndef FILE_LOG_MAX_LEVEL
+#define FILE_LOG_MAX_LEVEL logDEBUG
 #endif
 
-#define LOGGER(level)                   \
-  if (level > FILELOG_MAX_LEVEL)        \
-    ;                                   \
-  else if (level > Log::LoggingLevel()) \
-    ;                                   \
-  else                                  \
+#define LOGGER(level)               \
+  if (level > FILE_LOG_MAX_LEVEL)    \
+    ;                               \
+  else if (level > Log::LogLevel()) \
+    ;                               \
+  else                              \
     Log().Get(__FUNCTION__, level)
 
 #endif  // LOGGER_H_

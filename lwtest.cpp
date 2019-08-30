@@ -1,7 +1,7 @@
 #include "Logger.h"
 
 int main() {
-  Log::LoggingLevel() = Log::LevelFromString("DEBUG");
+  Log::LogLevel() = Log::LevelFromString("DEBUG");
   Log::OnOffFile() = true;
   Log::LogPath() = "/tmp/lwtest.log";
   Log::OnOffStdout() = true;
