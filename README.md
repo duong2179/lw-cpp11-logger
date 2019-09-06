@@ -1,5 +1,11 @@
 # lw-cpp11-logger
-Light Weight C++11 Logger
+Light Weight C++11 Logger inspired by http://www.drdobbs.com/cpp/a-lightweight-logger-for-c/240147505 (link is dead - sorry) with some modifications.
+
+`lw-cpp11-logger` allows to:
++ Enable / Disable writing to output streams (stdout and file), and
++ Adjust logging level
+
+on-demand at runtime.
 
 ### How to build
 ```
