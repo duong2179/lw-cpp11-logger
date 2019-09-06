@@ -16,7 +16,7 @@ std::string Log::TimeStringFromEpoch(int64_t ts64) {
   time_t secs = ts64 / MSECS_PER_SEC;
   int32_t msecs = ts64 % MSECS_PER_SEC;
 
-  // TODO: localtime is NOT thread-safe
+  // TODO: localtime is NOT guaranteed to be thread-safe
   struct tm timeinfo = *std::localtime(&secs);
 
   char str[32];
